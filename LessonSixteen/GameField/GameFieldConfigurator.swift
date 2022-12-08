@@ -9,7 +9,7 @@ protocol GameFieldConfiguratorProtocol: AnyObject {
     func configure(with viewController: GameFieldViewProtocol)
 }
 
-class GameFieldConfigurator {
+final class GameFieldConfigurator {
     
 //    MARK: - Properties
     

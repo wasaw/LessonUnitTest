@@ -7,7 +7,10 @@
 
 protocol GameFieldPresenterProtocol: AnyObject {
     var interactor: GameFieldInteractorProtocol? { get set }
-    
+    func startGame()
+    func cellCheck(_ position: Int)
+    func sendState(_ cellState: [CellState])
+    func endGame()
 }
 
 final class GameFieldPresenter {
@@ -26,5 +29,19 @@ final class GameFieldPresenter {
 //  MARK: - GameFieldPresenterProtocol
 
 extension GameFieldPresenter: GameFieldPresenterProtocol {
+    func startGame() {
+        interactor?.startGame()
+    }
     
+    func cellCheck(_ position: Int) {
+        interactor?.cellCheck(position)
+    }
+    
+    func sendState(_ cellState: [CellState]) {
+        view?.updateCell(cellState)
+    }
+    
+    func endGame() {
+        view?.endGame()
+    }
 }

@@ -17,6 +17,7 @@
 		BB9BB0FB2940DADA00DC6972 /* GameFieldConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BB0FA2940DADA00DC6972 /* GameFieldConfigurator.swift */; };
 		BB9BB0FD2940DD3A00DC6972 /* GameFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BB0FC2940DD3A00DC6972 /* GameFieldCell.swift */; };
 		BB9BB0FF2941CFEE00DC6972 /* GameFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BB0FE2941CFEE00DC6972 /* GameFieldModel.swift */; };
+		BB9BB1022941E54200DC6972 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BB1012941E54200DC6972 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		BB9BB0FA2940DADA00DC6972 /* GameFieldConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldConfigurator.swift; sourceTree = "<group>"; };
 		BB9BB0FC2940DD3A00DC6972 /* GameFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldCell.swift; sourceTree = "<group>"; };
 		BB9BB0FE2941CFEE00DC6972 /* GameFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldModel.swift; sourceTree = "<group>"; };
+		BB9BB1012941E54200DC6972 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		BB9BB0B32940C60200DC6972 /* LessonSixteen */ = {
 			isa = PBXGroup;
 			children = (
+				BB9BB1002941E53600DC6972 /* Utills */,
 				BB9BB0F32940D7B200DC6972 /* GameField */,
 				BB9BB0B42940C60200DC6972 /* AppDelegate.swift */,
 				BB9BB0B62940C60200DC6972 /* SceneDelegate.swift */,
@@ -112,6 +115,14 @@
 				BB9BB0FE2941CFEE00DC6972 /* GameFieldModel.swift */,
 			);
 			path = GameField;
+			sourceTree = "<group>";
+		};
+		BB9BB1002941E53600DC6972 /* Utills */ = {
+			isa = PBXGroup;
+			children = (
+				BB9BB1012941E54200DC6972 /* Extensions.swift */,
+			);
+			path = Utills;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB9BB0B52940C60200DC6972 /* AppDelegate.swift in Sources */,
+				BB9BB1022941E54200DC6972 /* Extensions.swift in Sources */,
 				BB9BB0B72940C60200DC6972 /* SceneDelegate.swift in Sources */,
 				BB9BB0FB2940DADA00DC6972 /* GameFieldConfigurator.swift in Sources */,
 				BB9BB0FF2941CFEE00DC6972 /* GameFieldModel.swift in Sources */,
