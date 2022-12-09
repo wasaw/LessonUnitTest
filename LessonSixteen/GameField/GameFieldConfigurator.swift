@@ -9,20 +9,14 @@ protocol GameFieldConfiguratorProtocol: AnyObject {
     func configure(with viewController: GameFieldViewProtocol)
 }
 
-final class GameFieldConfigurator {
-    
-//    MARK: - Properties
-    
-//    MARK: - Lifecycle
-    
-}
+final class GameFieldConfigurator {}
 
 //  MARK: - GameFieldConfiguratorProtocol
 
 extension GameFieldConfigurator: GameFieldConfiguratorProtocol {
     func configure(with viewController: GameFieldViewProtocol) {
         let presenter = GameFieldPresenter(view: viewController)
-        let interactor = GameFieldInteractor(presenter: presenter)
+        let interactor = GameFieldInteractor(presenter: presenter, appealStartState: StartState())
         
         viewController.presenter = presenter
         presenter.interactor = interactor

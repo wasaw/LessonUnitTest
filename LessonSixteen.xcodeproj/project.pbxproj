@@ -18,6 +18,7 @@
 		BB9BB0FD2940DD3A00DC6972 /* GameFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BB0FC2940DD3A00DC6972 /* GameFieldCell.swift */; };
 		BB9BB0FF2941CFEE00DC6972 /* GameFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BB0FE2941CFEE00DC6972 /* GameFieldModel.swift */; };
 		BB9BB1022941E54200DC6972 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BB1012941E54200DC6972 /* Extensions.swift */; };
+		BB9BB10429432E3600DC6972 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BB10329432E3500DC6972 /* MockService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		BB9BB0FC2940DD3A00DC6972 /* GameFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldCell.swift; sourceTree = "<group>"; };
 		BB9BB0FE2941CFEE00DC6972 /* GameFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldModel.swift; sourceTree = "<group>"; };
 		BB9BB1012941E54200DC6972 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BB9BB10329432E3500DC6972 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				BB9BB0EC2940C91B00DC6972 /* LessonSixteenTests.swift */,
+				BB9BB10329432E3500DC6972 /* MockService.swift */,
 			);
 			path = LessonSixteenTests;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB9BB0ED2940C91B00DC6972 /* LessonSixteenTests.swift in Sources */,
+				BB9BB10429432E3600DC6972 /* MockService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

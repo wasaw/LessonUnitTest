@@ -7,28 +7,28 @@
 
 protocol GameFieldInteractorProtocol: AnyObject {
     var presenter: GameFieldPresenterProtocol? { get set }
-    func startGame()
-    func cellCheck(_ position: Int)
+    func startGame() -> [CellState]
+    func cellCheck(_ position: Int) -> [CellState]
 }
 
 final class GameFieldInteractor {
     
 //    MARK: - Properties
     
-    var presenter: GameFieldPresenterProtocol?
-    private let horizontalStartPosition = [0, 4, 8, 12]
-    private let verticalStartPosition = [0, 1, 2, 3]
+    weak var presenter: GameFieldPresenterProtocol?
+
     private var battleshipPosition: [Int] = []
     private var direction: Direction?
-    private var step: Int?
-    private var startPosition: Int?
     private var cellState: [CellState] = []
     private var foundCell = 0
     
+    var appealStartState: StartStateProtocol
+    
 //    MARK: - Lifecycle
     
-    init(presenter: GameFieldPresenterProtocol) {
+    init(presenter: GameFieldPresenterProtocol, appealStartState: StartStateProtocol) {
         self.presenter = presenter
+        self.appealStartState = appealStartState
     }
 }
 
@@ -37,33 +37,25 @@ final class GameFieldInteractor {
 extension GameFieldInteractor: GameFieldInteractorProtocol {
     
     //    MARK: - Helpers
-        func startGame() {
-            direction = Direction(rawValue: Int.random(in: 0...1))
-            battleshipPosition = []
-            cellState = []
-            foundCell = 0
+    func startGame() -> [CellState] {
+        battleshipPosition = []
+        cellState = []
+        foundCell = 0
+        
+        guard var startState = appealStartState.getStartState() else { return [] }
             
-            if direction == .vertical {
-                step = 4
-                startPosition = verticalStartPosition.randomElement()
-            } else {
-                step = 1
-                startPosition = horizontalStartPosition.randomElement()
-            }
-            guard var startPosition = startPosition else { return }
-            guard let step = step else { return }
             for _ in 0...3 {
-                battleshipPosition.append(startPosition)
-                startPosition += step
+                battleshipPosition.append(startState.1)
+                startState.1 += startState.0
             }
             
             for _ in 0...15 {
                 cellState.append(.empty)
             }
-            presenter?.sendState(cellState)            
+            return cellState
         }
     
-    func cellCheck(_ position: Int) {
+    func cellCheck(_ position: Int) -> [CellState]{
         if battleshipPosition.contains(position) {
             cellState[position] = .get
             foundCell += 1
@@ -73,6 +65,6 @@ extension GameFieldInteractor: GameFieldInteractorProtocol {
         } else {
             cellState[position] = .miss
         }
-        presenter?.sendState(cellState)
+        return cellState
     }
 }

@@ -30,7 +30,7 @@ final class GameFieldViewController: UIViewController {
     }()
     private let textLabel: UILabel = {
         let label = UILabel()
-        label.text = "Найдите четырех палубный крейсер."
+        label.text = "Найдите четырехпалубный крейсер."
         label.font = UIFont.systemFont(ofSize: 21)
         label.textColor = .textColor
         return label
@@ -146,7 +146,8 @@ extension GameFieldViewController: UICollectionViewDelegate {
 
 extension GameFieldViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 16
+        guard let count = cellState?.count else { return 0}
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
